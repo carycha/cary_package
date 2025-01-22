@@ -1,5 +1,7 @@
 import os
-import jieba
+
+# import jieba
+import jieba_fast as jieba
 import re
 import unicodedata
 
@@ -9,7 +11,9 @@ class jieba_obj:
         root_path = os.path.dirname(__file__)
         if not dict_path:
             # self.dict_path = os.path.join(root_path, "static/jieba_dict/", "dict.txt.big.mix.txt")
-            self.dict_path = os.path.join(root_path, "static/jieba_dict/", "dict.txt.big.tw_nerd.txt")
+            self.dict_path = os.path.join(
+                root_path, "static/jieba_dict/", "dict.txt.big.tw_nerd.txt"
+            )
         else:
             self.dict_path = dict_path
         if not stopword_path:
