@@ -26,5 +26,6 @@ setup(
         'httpx>=0.28.1',
         'numpy>=2.2.2',
         'scipy>=1.15.1',
+        'beautifulsoup4>=4.12.3',
     ],
 )
