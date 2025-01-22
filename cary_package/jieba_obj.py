@@ -56,13 +56,15 @@ class jieba_obj:
         skip_stopword=False,
         skip_space=True,
         skip_punctuation=True,
+        skip_eng_and_num=False,
         skip_int=True,
         full2half=True,
+        hmm=False,
     ):
         if lowercase:
             text = text.lower()
         result_list = []
-        rank_result = jieba.cut(text, cut_all=cut_all, HMM=False)
+        rank_result = jieba.cut(text, cut_all=cut_all, HMM=hmm)
         for i in rank_result:
             if full2half:
                 i = self.full2half(i)
@@ -77,6 +79,9 @@ class jieba_obj:
                     continue
             if skip_punctuation:
                 if self.is_only_punctuation(i):
+                    continue
+            if skip_eng_and_num:
+                if i.encode().isalnum():
                     continue
             if skip_stopword:
                 if i in self.stopword_list:
