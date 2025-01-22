@@ -8,7 +8,8 @@ class jieba_obj:
     def __init__(self, dict_path="", stopword_path=""):
         root_path = os.path.dirname(__file__)
         if not dict_path:
-            self.dict_path = os.path.join(root_path, "static/jieba_dict/", "dict.txt.big.mix.txt")
+            # self.dict_path = os.path.join(root_path, "static/jieba_dict/", "dict.txt.big.mix.txt")
+            self.dict_path = os.path.join(root_path, "static/jieba_dict/", "dict.txt.big.tw_nerd.txt")
         else:
             self.dict_path = dict_path
         if not stopword_path:
