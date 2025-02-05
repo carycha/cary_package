@@ -27,5 +27,6 @@ setup(
         'numpy>=1.18.5',
         'scipy>=1.7.0',
         'beautifulsoup4>=4.12.3',
+        'polars>=1.19.0',
     ],
 )
