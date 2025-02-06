@@ -3,7 +3,7 @@ import polars as pl
 import pandas as pd
 
 
-def load_pq(file_path, return_df=False):
+def load_pq(file_path, return_df=False, use_pyarrow=True):
     # df = pd.read_parquet(file_path, engine='pyarrow')
 
     # # 转换为列表字典格式
@@ -25,7 +25,7 @@ def load_pq(file_path, return_df=False):
         A list of dictionaries or a polars DataFrame loaded from the Parquet file.
     """
     try:
-        df = pl.read_parquet(file_path)
+        df = pl.read_parquet(file_path, use_pyarrow=True)
     except Exception as e:
         raise Exception(f"load_pq 失敗: {e}")
 
